@@ -1,9 +1,10 @@
+import { Label } from "./FilterStyled";
 
 const Filter = ({ value, onChange }) => (
-    <label>
+    <Label>
       Find contacts by name
       <input type="text" value={value} name="filter" onChange={onChange} />
-    </label>
+    </Label>
   );
   
   export default Filter;

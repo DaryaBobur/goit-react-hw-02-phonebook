@@ -16,9 +16,6 @@ class App extends Component {
     filter: '',
   }
 
-  nameUserInputId = nanoid();
-
-  
   addContact = (data) => {
     if(this.duplicateName(data)) {
       return alert(`${data.name} is already in contacts!`)
@@ -29,7 +26,7 @@ class App extends Component {
       name: data.name,
       number: data.number,
     }
-    console.log(contact);
+   
     this.setState(prevState => ({
       contacts: [contact, ...prevState.contacts],
     }))
@@ -69,33 +66,27 @@ class App extends Component {
     return contacts.find((contact) => contact.name === name);
   }
 
-
-  
-
  render() {
-  
   return (
-<ContainerApp>
-  <Title>Phonebook</Title>
-  <ContactForm onSubmit={this.addContact}/>
+    <ContainerApp>
+      <Title>Phonebook</Title>
+      <ContactForm onSubmit={this.addContact}/>
 
-  <Subtitle>Contacts</Subtitle>
+      <Subtitle>Contacts</Subtitle>
 
-  <Filter 
-   value={this.state.filter} 
-   onChange={this.filterNamesContacts}
-  />
+      <Filter 
+        value={this.state.filter} 
+        onChange={this.filterNamesContacts}
+      />
 
-  <ContactsList 
-   contacts={this.getFilteredContacts()} 
-   removeContact={this.removeContact}
-  />
+      <ContactsList 
+        contacts={this.getFilteredContacts()} 
+        removeContact={this.removeContact}
+      />
 
-</ContainerApp>
+    </ContainerApp>
   )
 };
 }
-
-
 
 export default App;

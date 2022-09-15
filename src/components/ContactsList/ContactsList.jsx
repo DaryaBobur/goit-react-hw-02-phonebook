@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Contacts } from './ContactsListStyled';
 
@@ -11,8 +12,16 @@ const ContactsList = ({ contacts, removeContact }) =>{
        </li>)}
     </Contacts>
         )
+}
 
-    
+
+ContactsList.propTypes = {
+   contacts: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+  }))
 
 }
+
 export default ContactsList;

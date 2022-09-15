@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Label = styled.label`
-font-size: 18px;
-font-weight: 500;
-display: flex;
-flex-direction: column;
-width: 200px;
-margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-bottom: 15px;
 
 input {
     padding-top: 3px;
